@@ -1,0 +1,32 @@
+# Exclude node modules
+node_modules/
+
+# Exclude logs
+logs/
+*.log
+
+# Exclude git directory and files
+.git/
+.gitignore
+
+# Exclude Docker files
+docker-compose.yml
+Dockerfile
+
+# Exclude temporary files
+tmp/
+temp/
+
+# Exclude configuration files that are not needed
+*.env
+.env*
+
+# Exclude other unnecessary files
+*.md
+*.txt
+*.pdf
+
+# Exclude specific directories that may contain unnecessary files
+coverage/
+dist/
+build/
