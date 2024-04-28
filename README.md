@@ -1,75 +1,84 @@
-Food Truck Finder
 
-> Explore San Francisco's vibrant street food scene with our easy-to-use app.
+# Food Truck Application
 
-Food Truck (shot.png)
+## Project Overview
 
-Introduction
+This Food Truck application serves as a full-stack project built with React, Node.js, and Elasticsearch. It's designed to showcase real-time data interaction with a map interface, where users can find food trucks in a city, explore their menus, and locate them on the map.
 
-This project is an engaging web application designed to help users discover food trucks in San Francisco. Leveraging the latest technologies in web development, the app provides a robust and intuitive interface for finding and exploring street food options. The backend is powered by Node.js and Express, integrating with Elasticsearch for efficient data retrieval. The frontend is developed using React, with GraphQL handling data operations seamlessly. Interactive maps provided by Mapbox enhance the user experience by visually representing food truck locations.
+## Prerequisites
 
-Features
-
-- Search Functionality: Quickly find food trucks based on the food items they offer.
-- Interactive Maps: View the exact locations of food trucks on an interactive map.
-- Mobile Responsive: Fully responsive design that works on mobile, tablets, and desktops.
-
-Getting Started
-
-To get a local copy up and running follow these simple steps.
-
-Prerequisites
-
-- Node.js
-- npm
-npm install npm@latest -g
 - Docker
+- Node.js (v18.17.0)
+- NPM
 
-Installation
+## Installation and Local Development
 
-1. Clone the repo
-git clone https://github.com/your_username_/Project-Name.git
-2. Install NPM packages
-npm install
-3. Start the application
-npm start
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/yourusername/foodtruck-app.git
+   cd foodtruck-app
+   ```
 
-Docker Deployment
+2. **Navigate to the app directory:**
+   ```bash
+   cd food_truck/app
+   ```
 
-1. Build the Docker image
-docker build -t foodtruck-web .
-2. Run the Docker container
-docker run -dp 3000:3000 foodtruck-web
+3. **Install dependencies:**
+   ```bash
+   npm install
+   ```
 
-Technology Stack
+4. **Build the project:**
+   ```bash
+   npm run build
+   ```
 
-- Backend: Node.js, Express
-- Database: Elasticsearch
-- Frontend: React, React Apollo
-- API: GraphQL
-- Styling: CSS-in-JS
-- Deployment: Docker, potentially scalable to AWS ECS with provided scripts
+5. **Start the application locally:**
+   ```bash
+   npm start
+   ```
+   This command will start the backend server on `http://localhost:3000` and will also serve the frontend.
 
-Contributing
+## Docker Deployment
 
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are greatly appreciated.
+1. **Build the Docker image:**
+   ```bash
+   docker build -t dva89/foodtruck-app .
+   ```
 
-1. Fork the Project
-2. Create your Feature Branch (git checkout -b feature/AmazingFeature)
-3. Commit your Changes (git commit -m 'Add some AmazingFeature')
-4. Push to the Branch (git push origin feature/AmazingFeature)
-5. Open a Pull Request
+2. **Run the Docker containers:**
+   ```bash
+   docker-compose up
+   ```
+   This will start both the application and the Elasticsearch service as defined in the `docker-compose.yml`.
 
-License
+## Project Structure
 
-Distributed under the MIT License. See LICENSE for more information.
+```
+/food-truck-app
+|-- /src
+|   |-- /client       # Client-specific code (React, CSS)
+|   |   |-- components  # React components
+|   |   |-- App.js
+|   |   |-- index.js
+|   |-- /server       # Server-specific code (Express, GraphQL)
+|   |   |-- api       # API logic and controllers
+|   |   |-- config    # Server config files
+|   |   |-- routes    # Defines all routes and their controllers
+|   |   |-- services  # Backend service logic, e.g., interacting with Elasticsearch
+|-- /public           # Static files and compiled output
+|-- /config           # Configuration files like Webpack
+|-- /scripts          # Scripts for building and running the project
+|-- package.json      # Node project dependencies and scripts
+|-- Dockerfile
+|-- docker-compose.yml
+|-- README.md
+```
 
-Acknowledgements
+## Important Notes
 
-- Node.js (https://nodejs.org/)
-- React (https://reactjs.org/)
-- Elasticsearch (https://www.elastic.co/)
-- Mapbox (https://www.mapbox.com/)
-- SF Data (https://data.sfgov.org/)
+- Ensure Docker is correctly installed and configured on your machine before attempting to run the Docker commands.
+- The application uses a mocked backend for demonstration purposes; adjust the data endpoints for production use.
 
-Learn more about deploying Docker containers and managing scalable infrastructure in our project documentation (https://example.com/docs).
+This README provides a concise yet comprehensive guide to getting the Food Truck application running on your local development machine and using Docker for deployment.
